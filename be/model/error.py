@@ -9,8 +9,20 @@ error_code = {
     517: "stock level low, book id {}",
     518: "invalid order id {}",
     519: "not sufficient funds, order id {}",
+<<<<<<< HEAD
     528: "database error",
     530: "unknown error",
+=======
+    520: "",
+    521: "",
+    522: "",
+    523: "",
+    524: "",
+    525: "",
+    526: "",
+    527: "",
+    528: "",
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc
 }
 
 
@@ -47,7 +59,11 @@ def error_invalid_order_id(order_id):
 
 
 def error_not_sufficient_funds(order_id):
+<<<<<<< HEAD
     return 519, error_code[519].format(order_id)
+=======
+    return 519, error_code[518].format(order_id)
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc
 
 
 def error_authorization_fail():
@@ -55,4 +71,8 @@ def error_authorization_fail():
 
 
 def error_and_message(code, message):
+<<<<<<< HEAD
     return code, message
+=======
+    return code, message
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc

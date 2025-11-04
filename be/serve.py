@@ -28,7 +28,11 @@ def be_run():
     this_path = os.path.dirname(__file__)
     parent_path = os.path.dirname(this_path)
     log_file = os.path.join(parent_path, "app.log")
+<<<<<<< HEAD
     init_database("bookstore")  # 数据库名
+=======
+    init_database(parent_path)
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc
 
     logging.basicConfig(filename=log_file, level=logging.ERROR)
     handler = logging.StreamHandler()
@@ -44,4 +48,8 @@ def be_run():
     app.register_blueprint(seller.bp_seller)
     app.register_blueprint(buyer.bp_buyer)
     init_completed_event.set()
+<<<<<<< HEAD
     app.run()
+=======
+    app.run()
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc

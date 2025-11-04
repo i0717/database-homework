@@ -10,8 +10,17 @@ bp_buyer = Blueprint("buyer", __name__, url_prefix="/buyer")
 def new_order():
     user_id: str = request.json.get("user_id")
     store_id: str = request.json.get("store_id")
+<<<<<<< HEAD
     books: list = request.json.get("books", [])
     id_and_count = [(book.get("id"), book.get("count", 0)) for book in books]
+=======
+    books: [] = request.json.get("books")
+    id_and_count = []
+    for book in books:
+        book_id = book.get("id")
+        count = book.get("count")
+        id_and_count.append((book_id, count))
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc
 
     b = Buyer()
     code, message, order_id = b.new_order(user_id, store_id, id_and_count)
@@ -32,7 +41,14 @@ def payment():
 def add_funds():
     user_id = request.json.get("user_id")
     password = request.json.get("password")
+<<<<<<< HEAD
     add_value = int(request.json.get("add_value", 0))
     b = Buyer()
     code, message = b.add_funds(user_id, password, add_value)
     return jsonify({"message": message}), code
+=======
+    add_value = request.json.get("add_value")
+    b = Buyer()
+    code, message = b.add_funds(user_id, password, add_value)
+    return jsonify({"message": message}), code
+>>>>>>> d699ef45a40f38eb8007bef2f8d99159c1ff41cc
